@@ -1,0 +1,12 @@
+# ASP.NET Core
+bin/
+obj/
+appsettings.Development.json
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
