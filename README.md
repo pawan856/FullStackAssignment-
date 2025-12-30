@@ -18,3 +18,5 @@ This repository contains the solution for the Full Stack Developer Pre-work Assi
 *   **Location**: `Part3_DataAnalysis/`
 *   **Description**: Python data analysis using Pandas, Matplotlib, and Seaborn. Includes a mock dataset (`dataset.csv`) and a Jupyter Notebook (`Analysis.ipynb`).
 *   **Instructions**: Navigate to `Part3_DataAnalysis` and follow the `README.md` to run the analysis.
+
+<!-- Updated to refresh repository stats -->
