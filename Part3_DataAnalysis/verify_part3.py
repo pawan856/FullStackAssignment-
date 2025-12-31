@@ -9,22 +9,22 @@ def verify_part3():
     missing = [f for f in files if not os.path.exists(f)]
     
     if missing:
-        print(f"❌ FAILED: Missing files: {missing}")
+        print(f"FAILED: Missing files: {missing}")
         return
     else:
-        print("✅ File Check: All required files exist.")
+        print("File Check: All required files exist.")
 
     # Verify Analysis Logic
     try:
         df = pd.read_csv('dataset.csv')
         
         # 1. Cleaning & Column Mapping
-        # Map new columns to old names for consistency if needed, or just access directly
+        # Map new columns to old names for consistency, or just access directly
         df.rename(columns={'User ID': 'User_ID', 'Product Category': 'Product_Category'}, inplace=True)
         
         df['Revenue'] = df['Revenue'].fillna(0)
         
-        # New date format seems to be DD-MM-YYYY
+        # New date format be DD-MM-YYYY
         df['Timestamp'] = pd.to_datetime(df['Timestamp'], dayfirst=True, errors='coerce')
         df = df.dropna(subset=['Timestamp'])
         
@@ -33,19 +33,19 @@ def verify_part3():
         purchasers = df[df['Action'] == 'purchased']['User_ID'].nunique()
         conversion_rate = (purchasers / total_users) * 100
         
-        print(f"✅ Data Loaded: {len(df)} rows.")
-        print(f"ℹ️  Calculated Conversion Rate: {conversion_rate:.2f}%")
+        print(f"Data Loaded: {len(df)} rows.")
+        print(f"Calculated Conversion Rate: {conversion_rate:.2f}%")
         
         if conversion_rate > 0:
-             print("✅ Logic Check: Convention rate calculation looks valid.")
+             print("Logic Check: Convention rate calculation looks valid.")
         else:
-             print("⚠️  Warning: Conversion rate is 0%.")
+             print("Warning: Conversion rate is 0%.")
 
     except Exception as e:
-        print(f"❌ FAILED: Error during data verification: {e}")
+        print(f"FAILED: Error during data verification: {e}")
         return
 
-    print("--- Part 3 Verification COMPLETED SUCCESSFULY ---")
+    print("Part 3 Verification COMPLETED SUCCESSFULY")
 
 if __name__ == "__main__":
     verify_part3()

@@ -13,8 +13,8 @@ public interface IOrderStore
     bool Delete(int id);
 }
 
-// Simple in-memory storage for the assignment. 
-// NOTE: Data is lost when the app restarts!
+// Simple in-memory storage for the temporary work. 
+// Data is lost when the app restarts
 public class InMemoryOrderStore : IOrderStore
 {
     private readonly ConcurrentDictionary<int, Order> _orders = new();
@@ -54,7 +54,7 @@ public class InMemoryOrderStore : IOrderStore
     {
         if (!_orders.TryGetValue(id, out var existing)) return false;
         
-        // Manual mapping for now - simpler than AutoMapper for this small task
+        // Manual mapping for now due to small size of the task and also simpler than AutoMapper 
         if (!string.IsNullOrWhiteSpace(order.Product)) existing.Product = order.Product;
         if (!string.IsNullOrWhiteSpace(order.Category)) existing.Category = order.Category;
         if (!string.IsNullOrWhiteSpace(order.Status)) existing.Status = order.Status;

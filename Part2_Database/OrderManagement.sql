@@ -30,7 +30,7 @@ CREATE TABLE Products (
 );
 
 -- Orders Table
--- Simplified schema: Orders contains product references directly to satisfy the 4-table limit 
+--  Orders contains product references directly to satisfy the 4-table limit 
 -- while allowing "Revenue per product" calculations.
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY IDENTITY(1,1),

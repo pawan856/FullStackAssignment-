@@ -30,6 +30,6 @@ Render will clone your repo, build the app, and deploy it. Once finished, you wi
 ## Testing the Deployed API
 
 1.  Open the URL provided by Render.
-2.  Append `/swagger/index.html` to the URL (e.g., `https://.../swagger/index.html`).
+2.  Append `/swagger/index.html` to the URL ('https://fullstack-assignment-api.onrender.com/swagger/index.html').
     *   *Note*: Ensure `app.UseSwagger()` is enabled in `Program.cs` even for Production if you want to see this page. (In the provided code, it is enabled generally).
 3.  Use the `X-API-KEY` (`SecretKey123`) to test endpoints.

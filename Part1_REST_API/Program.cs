@@ -39,11 +39,11 @@ builder.Services.AddSingleton<IOrderStore, InMemoryOrderStore>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-// Enable Swagger always for this assignment for easier testing
+// Enable Swagger  for testing
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// Using custom basic middleware for assignment simplicity
+// Using custom basic middleware for  simplicity
 app.UseMiddleware<ApiKeyMiddleware>();
 
 app.UseAuthorization();
